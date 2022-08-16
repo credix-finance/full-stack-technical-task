@@ -1,15 +1,11 @@
 # Credix Full-Stack Technical Task
 
-## Context & goal
-
-At the moment Credix reads from and to the Solana blockchain. Now we want to start building a backend service to capture information about our borrowers and show this info to the investors. To capture this information, we want to be able to create dynamic forms among other features.
-
-For technical tasks, we always choose a challenge which is close to the ones that we face every day. We pick one, dummy it down and have a clear goal in mind:
+## Goal
 
 The goal of this technical task is:
 
-- create an API in which:
-  1. Create Form Definitions
+- create an API which supports:
+  1. Create of Form Definitions
      - each field in the definition has a “question” and a data type that the answer should adhere to
   2. Submit + Validate Entries
      - form entries should be validated on data field types
@@ -109,7 +105,7 @@ We will submit the following entries (the entries marked as **invalid** should t
 ## Frontend
 
 We've provided you with a skeleton nextjs project.
-Feel free to add and use any library you want. We don't want you to reinvet the wheel.
+Feel free to add and use any library you want. We don't want you to reinvent the wheel.
 
 For reference at Credix we use the following technologies:
 
@@ -139,7 +135,6 @@ Time limit: 8-10 hours
 
 Deliverables:
 
-- Architectural diagram
 - Github link with README
 - Working demo
 
