@@ -31,74 +31,76 @@ If you're more comfortable with something else feel free to include it.
 
 To test your implementation; we will create two forms (the service should be able to create an arbitrary number of forms):
 
-- Borrower form
-  - What is the name of your company? string
-  - Where is your company located? tuple (lat/lon)
-  - How long does your company exist? integer
-- Investor form
-  - How much capital do you want to invest? integer
-  - Are you interested in investing in individual deals? boolean
-  - What was the date your company was founded? date
-  - How many people work at your firm? integer
+- Form 1
+
+  - What is your name? string
+  - Where do you live? tuple (lat/lon)
+  - How long, in seconds, can you hold your breath? integer
+
+- Form 2
+  - Are you interested in crypto? boolean
+  - How many different coins have you invested in? integer
+  - What was the date you first bought crypto? date
+  - How many times, per year, do you buy crypto? integer
 
 ### Submit + Validate Entries
 
 We will submit the following entries (the entries marked as **invalid** should throw an error):
 
-**Borrower - entry 1**
+**Form 1 - entry 1**
 
-| question                          | answer       | validation |
-| --------------------------------- | ------------ | ---------- |
-| What is the name of your company? | “a 55”       | valid      |
-| Where is your company located?    | (2838, 2837) | valid      |
-| How long does your company exist  | 6            | valid      |
+| question                                        | answer       | validation |
+| ----------------------------------------------- | ------------ | ---------- |
+| What is your name?                              | "Mark"       | valid      |
+| Where do you live?                              | (2838, 2837) | valid      |
+| How long, in seconds, can you hold your breath? | 32           | valid      |
 
-**Borrower - entry 2**
+**Form 1 - entry 2**
 
-| question                          | answer      | validation |
-| --------------------------------- | ----------- | ---------- |
-| What is the name of your company? | “Tecredi”   | valid      |
-| Where is your company located?    | (4726, 348) | valid      |
-| How long does your company exist  | 2           | valid      |
+| question                                        | answer      | validation |
+| ----------------------------------------------- | ----------- | ---------- |
+| What is your name?                              | "Andrew"    | valid      |
+| Where do you live?                              | (4726, 348) | valid      |
+| How long, in seconds, can you hold your breath? | 45          | valid      |
 
-**Borrower - entry 3**
+**Form 1 - entry 3**
 
-| question                          | answer      | validation |
-| --------------------------------- | ----------- | ---------- |
-| What is the name of your company? | “Provi”     | valid      |
-| Where is your company located?    | (482, 2833) | valid      |
-| How long does your company exist  | 8           | valid      |
+| question                                        | answer      | validation |
+| ----------------------------------------------- | ----------- | ---------- |
+| What is your name?                              | "John"      | valid      |
+| Where do you live?                              | (482, 2833) | valid      |
+| How long, in seconds, can you hold your breath? | 20          | valid      |
 
-**Investor - entry 1**
+**Form 2 - entry 1**
 
-| question                                            | answer     | validation |
-| --------------------------------------------------- | ---------- | ---------- |
-| How much capital do you want to invest              | 5000000    | valid      |
-| Are you interested in investing in individual deals | True       | valid      |
-| What was the date your company was founded          | 21/01/2002 | valid      |
-| How many people work at your firm                   | 73         | valid      |
+| question                                      | answer     | validation |
+| --------------------------------------------- | ---------- | ---------- |
+| Are you interested in crypto                  | True       | valid      |
+| How many different coins have you invested in | 4          | valid      |
+| What was the date you first bought crypto     | 21/01/2002 | valid      |
+| How many times, per year, do you buy crypto   | 73         | valid      |
 
-**Investor - entry 2**
+**Form 2 - entry 2**
 
-| question                                            | answer     | validation |
-| --------------------------------------------------- | ---------- | ---------- |
-| How much capital do you want to invest              | 10000000   | valid      |
-| Are you interested in investing in individual deals | F          | valid      |
-| What was the date your company was founded          | 09/03/2006 | valid      |
-| How many people work at your firm                   | 23         | valid      |
+| question                                      | answer     | validation |
+| --------------------------------------------- | ---------- | ---------- |
+| Are you interested in crypto                  | F          | valid      |
+| How many different coins have you invested in | 3          | valid      |
+| What was the date you first bought crypto     | 09/03/2006 | valid      |
+| How many times, per year, do you buy crypto   | 23         | valid      |
 
-**Investor - entry 3**
+**Form 2 - entry 3**
 
-| question                                            | answer     | validation  |
-| --------------------------------------------------- | ---------- | ----------- |
-| How much capital do you want to invest              | "10M"      | **invalid** |
-| Are you interested in investing in individual deals | 1          | **invalid** |
-| What was the date your company was founded          | 09/03/2006 | valid       |
-| How many people work at your firm                   | 23         | valid       |
+| question                                      | answer     | validation  |
+| --------------------------------------------- | ---------- | ----------- |
+| Are you interested in crypto                  | 0          | **invalid** |
+| How many different coins have you invested in | "12"       | **invalid** |
+| What was the date you first bought crypto     | 09/03/2006 | valid       |
+| How many times, per year, do you buy crypto   | 23         | valid       |
 
 ### Filter on Entries (optional)
 
-- Get all borrowers whose company has existed longer than 3 years.
+- Get all persons who can hold their breath for longer than 30 seconds.
 
 ---
 
